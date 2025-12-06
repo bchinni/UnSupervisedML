@@ -16,8 +16,6 @@ UnsupervisedML/
 ├── data/                       # Place your datasets here (not tracked)
 │   ├── raw/                   # Raw input files
 │   └── processed/             # Intermediate outputs
-├── notebooks/                  # Jupyter notebooks for exploration
-│   └── demo_clustering.ipynb
 ├── src/
 │   ├── __init__.py
 │   ├── preprocessing.py        # Data cleaning, encoding, scaling
