@@ -1,0 +1,54 @@
+# Configuration for UMAP + GMM Clustering Pipeline
+
+# Data settings
+data:
+  input_file: 'data/raw/your_data.csv'
+  separator: ','  # CSV separator
+  id_col: null  # Column name for sample IDs (null if no ID column)
+  outcome_col: null  # Column name for outcome/labels (null if unsupervised only)
+
+# Preprocessing settings
+preprocessing:
+  missing_threshold: 0.3  # Drop features with >30% missing values
+  scaling: 'standard'  # Options: 'standard', 'minmax', 'robust'
+  imputation_method: 'iterative'  # Options: 'iterative', 'mean', 'median', 'knn'
+  exclude_cols: []  # List of column names to exclude from analysis
+
+# UMAP settings
+umap:
+  n_components: 3  # Number of dimensions (3 for 3D visualization)
+  metric: 'euclidean'  # Distance metric
+  # Options: 'euclidean', 'manhattan', 'cosine', 'correlation', 'hamming', 
+  #          'jaccard', 'braycurtis', 'canberra', 'chebyshev', 'minkowski'
+  
+  # Parameter ranges for optimization
+  n_neighbors: [15, 20, 25, 30, 35, 40, 45, 50]
+  learning_rate: [0.1, 0.3, 0.5, 0.7, 0.9, 1.0]
+  spread: [0.5, 1.0, 1.5, 2.0]
+  
+  # Fixed parameters
+  min_dist: 0.0  # Minimum distance between points in embedding
+  init: 'spectral'  # Initialization method: 'spectral' or 'random'
+
+# GMM clustering settings
+gmm:
+  # Range of cluster numbers to test
+  n_components_range: [2, 3, 4, 5, 6, 7, 8, 9, 10]
+  
+  # Covariance types to test
+  covariance_types: ['full', 'tied', 'diag', 'spherical']
+  # 'full': each component has its own general covariance matrix
+  # 'tied': all components share the same general covariance matrix
+  # 'diag': each component has its own diagonal covariance matrix
+  # 'spherical': each component has its own single variance
+  
+  init_params: 'kmeans'  # Initialization: 'kmeans' or 'random'
+
+# General settings
+random_state: 42  # Random seed for reproducibility
+
+# Output settings
+output:
+  results_dir: 'results/'
+  save_models: true
+  save_figures: true
