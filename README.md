@@ -13,7 +13,7 @@ This pipeline implements:
 
 ```
 UnsupervisedML/
-├── data/                       # Place your datasets here (not tracked)
+├── data/                       # Place your datasets here 
 │   ├── raw/                   # Raw input files
 │   └── processed/             # Intermediate outputs
 ├── src/
@@ -28,7 +28,7 @@ UnsupervisedML/
 │   ├── test_preprocessing.py
 │   ├── test_clustering.py
 │   └── test_dimensionality_reduction.py
-├── results/                    # Output directory (gitignored)
+├── results/                    # Output directory 
 │   ├── figures/
 │   ├── models/
 │   └── metrics/
@@ -43,22 +43,7 @@ UnsupervisedML/
 
 ## Installation
 
-### Option 1: Using pip
-
-```bash
-# Clone the repository
-git clone https://github.com/yourusername/UnsupervisedML.git
-cd UnsupervisedML
-
-# Create virtual environment
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-
-# Install dependencies
-pip install -r requirements.txt
-```
-
-### Option 2: Using conda
+### Using conda
 
 ```bash
 # Create environment from file
