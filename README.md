@@ -1,6 +1,6 @@
 # Unsupervised ML: UMAP + GMM Clustering Pipeline
 
-A modular Python pipeline for unsupervised clustering analysis combining UMAP dimensionality reduction with Gaussian Mixture Model (GMM) clustering, optimized using silhouette scores.
+ML pipeline for unsupervised clustering analysis combining UMAP dimensionality reduction with Gaussian Mixture Model (GMM) clustering, optimized using silhouette scores.
 
 ## Project Overview
 
